@@ -1,3 +1,7 @@
+import {IUser} from "./IUser";
+import {ECategories} from "../enums/Ecategories";
+import {EStatuses} from "../enums/Estatus";
+
 export interface ITodo {
    id?: string;
    title: string;
