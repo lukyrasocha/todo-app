@@ -12,5 +12,6 @@ export interface ITodo {
    description: string;
    dateAdded: string;
    dateCompleted: string;
+   updated?: boolean;
 }
 
