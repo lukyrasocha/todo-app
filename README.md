@@ -6,5 +6,6 @@ Progress:
 - [x] A simple nodejs app without frameworks
 - [x] Express app with a fake database
 - [ ] Frontend with Angular
-- [ ] Connect to MySQL
+- [x] Connect to MySQL
+- [ ] Change REST routes to communicate with the MySQL database 
 - [ ] Deploy on google cloud
