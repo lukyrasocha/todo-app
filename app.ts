@@ -1,7 +1,8 @@
 const express = require( "express" );
 const bodyParser = require('body-parser');
 const app = express();
-const connection = require('./connection');
+//const connection = require('./connection');
+import connection from './connection';
 
 const port = 5000; // default port to listen
 import router from "./routers/todos.router";
@@ -9,14 +10,6 @@ import router from "./routers/todos.router";
 app.get( "/api", function ( req, res ) {
     res.send( "Hello world!" );
 });
-
-
-
-connection.query('SELECT * FROM user', function (err, rows, fields) {
-    if (err) throw err
-
-    console.log('The solution is: ', JSON.stringify(rows))
-})
 
 
 // parse application/x-www-form-urlencoded
