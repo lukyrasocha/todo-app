@@ -27,7 +27,7 @@ export async function listTodos(): Promise<ITodo[]>{
             dateAdded: row.date_added,
             dateCompleted: row.date_completed
         }
-        console.log(row)
+
         todos.push(todo)
     }
 
