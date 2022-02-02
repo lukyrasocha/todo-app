@@ -1,8 +1,6 @@
 const express = require( "express" );
 const bodyParser = require('body-parser');
 const app = express();
-//const connection = require('./connection');
-import connection from './connection';
 
 const port = 5000; // default port to listen
 import router from "./routers/todos.router";
