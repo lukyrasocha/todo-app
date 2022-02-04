@@ -1,11 +1,32 @@
 import { ITodo } from "../../interfaces/ITodo";
+import connection from '../../connection';
+import { v4 as uuidv4 } from 'uuid';
+import {mapStatusToInt} from "../../utils/mapStatusToInt";
 
-export async function createTodo(newTodo): Promise<ITodo> {
+export async function createTodo(newTodo:ITodo): Promise<ITodo> {
+
+  const statusInt = await mapStatusToInt(newTodo.status);
+
   const todo: ITodo = {
-    id: Math.floor(4 + Math.random() * 10),
-    ...newTodo,
+    id: uuidv4(),
+    title: newTodo.title,
+    assignee: {
+      email: newTodo.assignee.email,
+      name: newTodo.assignee.name
+    },
+    assigned: {
+      email: newTodo.assigned.email,
+      name: newTodo.assigned.name
+    },
+    category: newTodo.category,
+    status: newTodo.status,
+    description: newTodo.description,
+    dateAdded:newTodo.dateAdded,
+    dateCompleted: null
   };
-  // here we would insert it to the database
-  console.log(todo);
+
+  const query = `INSERT INTO Todo(id,status,category,assignee,assigned,title,description,date_added,date_completed) VALUES(\'${todo.id}\',${statusInt},${todo.category},\'${todo.assignee.email}\',\'${todo.assigned.email}\',\'${todo.title}\',\'${todo.description}\',\'${todo.dateAdded}\',${todo.dateCompleted});`
+
+  connection.query(query)
   return Promise.resolve(todo);
 }
