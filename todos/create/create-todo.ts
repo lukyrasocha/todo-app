@@ -19,7 +19,7 @@ export async function createTodo(newTodo): Promise<ITodo> {
     category: newTodo.category,
     status: newTodo.status,
     description: newTodo.description,
-    dateAdded:moment().format('YYYY-MM-DD HH:mm:ss'),     //setting to null here and putting the actual date in the query itself
+    dateAdded:moment().format('YYYY-MM-DD HH:mm:ss'),
     dateCompleted: null
   };
 
