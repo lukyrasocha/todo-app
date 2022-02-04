@@ -20,4 +20,3 @@ INSERT INTO User(email,name) VALUES('mika@gmail.com','Mika Senghaas');
 INSERT INTO Todo(id,status,category,assignee,assigned,title,description,date_added,date_completed) VALUES('2f3as3fe4442s',1,1,'lukas@gmail.com','michael@gmail.com','First assignment','This is my first assignment for computas, hope it goes well',sysdate(),sysdate());
 INSERT INTO Todo(id,status,category,assignee,assigned,title,description,date_added,date_completed) VALUES('3fass325kasls',2,2,'robert@gmail.com','mika@gmail.com','Do this for me','This the second assignment for computas, hope it goes well',sysdate(),sysdate());
 
-select * from todo

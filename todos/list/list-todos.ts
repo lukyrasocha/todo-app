@@ -4,7 +4,7 @@ import connection from '../../connection';
 
 export async function listTodos(): Promise<ITodo[]>{
     const result:any = await connection.query('\n' +
-        'select T.id,T.status,T.title,T.description,T.date_added,T.date_completed,U.email as assignee_email, U.name as assignee_name, U2.email as assigned_email,U2.name as assigned_name \n' +
+        'select T.id,T.category,T.status,T.title,T.description,T.date_added,T.date_completed,U.email as assignee_email, U.name as assignee_name, U2.email as assigned_email,U2.name as assigned_name \n' +
         'from todo T join user U on T.assignee = U.email join user U2 on T.assigned=U2.email');
 
     const todos:ITodo[] = [];
