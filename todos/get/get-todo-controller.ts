@@ -4,11 +4,7 @@ import {ITodo} from "../../interfaces/ITodo";
 
 export async function getTodoController(req:Request, res:Response) {
 
-    const todo: ITodo|null = await getTodo(req.params.id);
-
-    if (todo === null){
-       return res.send(`Id ${req.params.id} not found`)
-     }
+    const todo: ITodo = await getTodo(req.params.id);
 
     res.send(todo)
 }
