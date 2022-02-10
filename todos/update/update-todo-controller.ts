@@ -3,10 +3,9 @@ import { Request, Response } from "express";
 import { ITodo } from "../../interfaces/ITodo";
 
 export async function updateTodoController(req: Request, res: Response) {
-  const updatedTodo: ITodo | null = await updateTodo(req.body);
-  if (updatedTodo === null) {
-    res.status(500).json({ error: "data not found" });
-  }
+  const updatedID: String = await updateTodo(req.body);
 
-  res.status(200).json(updatedTodo);
+  res
+    .status(200)
+    .json({ success: `Todo with id ${updatedID} successfully updated` });
 }
